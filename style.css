@@ -168,3 +168,34 @@ footer p { color: var(--gray); font-size: 12px; line-height: 2; }
   .about-image img, .music-image img, .style-image img { height: 400px; }
   .section-title { font-size: 40px; }
 }
+/* FIX LOGO */
+
+.logo-container {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2005;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    display: block !important;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo {
+    display: inline-block !important;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--green);
+}
