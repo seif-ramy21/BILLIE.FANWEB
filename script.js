@@ -1,56 +1,19 @@
-// =========================
-// MOBILE NAVIGATION MENU
-// =========================
-
+// Mobile navigation menu
 const menuBtn = document.getElementById("menuBtn");
-const closeBtn = document.getElementById("closeBtn");
 const navigation = document.getElementById("navigation");
 
-// Open the mobile menu
-function openMenu() {
-    navigation.classList.add("active");
-    document.body.classList.add("menu-open");
-}
-
-// Close the mobile menu
-function closeMenu() {
-    navigation.classList.remove("active");
-    document.body.classList.remove("menu-open");
-}
-
-// Toggle menu when clicking the menu button
 menuBtn.addEventListener("click", function () {
-    if (navigation.classList.contains("active")) {
-        closeMenu();
-    } else {
-        openMenu();
-    }
+    navigation.classList.toggle("active");
 });
 
-// Close menu using the X button
-closeBtn.addEventListener("click", function () {
-    closeMenu();
-});
-
-// Close menu when clicking a navigation link
-navigation.querySelectorAll("a").forEach(function (link) {
+// Close the mobile menu after selecting a section
+document.querySelectorAll("nav a").forEach(function (link) {
     link.addEventListener("click", function () {
-        closeMenu();
+        navigation.classList.remove("active");
     });
 });
 
-// Close menu when pressing Escape
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        closeMenu();
-    }
-});
-
-
-// =========================
-// REVEAL ELEMENTS ON SCROLL
-// =========================
-
+// Reveal elements as they enter the screen
 const revealElements = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -65,19 +28,7 @@ function revealOnScroll() {
     });
 }
 
-// Run when scrolling
 window.addEventListener("scroll", revealOnScroll);
 
 // Run once when the page loads
 revealOnScroll();
-
-
-// =========================
-// CLOSE MENU WHEN RESIZING
-// =========================
-
-window.addEventListener("resize", function () {
-    if (window.innerWidth > 700) {
-        closeMenu();
-    }
-});
