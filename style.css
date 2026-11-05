@@ -39,7 +39,21 @@ section { padding: 100px 8%; }
 .green-line { width: 80px; height: 5px; background: var(--green); margin-bottom: 30px; }
 
 /* NAVIGATION */
-header { position: fixed; top: 0; left: 0; width: 100%; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0,0,0,.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,.05); }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
 .logo { font-size: 25px; font-weight: 900; letter-spacing: 3px; }
 .logo span, .footer-logo span { color: var(--green); }
 nav { display: flex; gap: 30px; }
