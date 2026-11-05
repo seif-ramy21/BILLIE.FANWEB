@@ -13,19 +13,23 @@ function closeMenu() {
     document.body.classList.remove("menu-open");
 }
 
-menuBtn.addEventListener("click", openMenu);
+// Toggle menu open/closed when clicking the menu button
+menuBtn.addEventListener("click", function () {
+    if (navigation.classList.contains("active")) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+});
 
+// Close menu using the X button
 closeBtn.addEventListener("click", closeMenu);
 
-navigation.querySelectorAll("a").forEach(link => {
+// Close menu when selecting a navigation link
+navigation.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", closeMenu);
 });
-// Close the mobile menu after selecting a section
-document.querySelectorAll("nav a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navigation.classList.remove("active");
-    });
-});
+
 
 // Reveal elements as they enter the screen
 const revealElements = document.querySelectorAll(".reveal");
