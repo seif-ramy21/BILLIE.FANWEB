@@ -1,11 +1,25 @@
 // Mobile navigation menu
 const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
 const navigation = document.getElementById("navigation");
 
-menuBtn.addEventListener("click", function () {
-    navigation.classList.toggle("active");
-});
+function openMenu() {
+    navigation.classList.add("active");
+    document.body.classList.add("menu-open");
+}
 
+function closeMenu() {
+    navigation.classList.remove("active");
+    document.body.classList.remove("menu-open");
+}
+
+menuBtn.addEventListener("click", openMenu);
+
+closeBtn.addEventListener("click", closeMenu);
+
+navigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
 // Close the mobile menu after selecting a section
 document.querySelectorAll("nav a").forEach(function (link) {
     link.addEventListener("click", function () {
